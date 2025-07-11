@@ -1,0 +1,132 @@
+ Satellite Signal Analyzer – Orbital Communication Health Monitor
+
+
+
+ 🌐 Background Context:
+
+You're part of a space communication engineering team responsible for monitoring Earth’s orbiting satellites. Each satellite transmits signal logs multiple times a day. Your job is to develop a system that analyzes the quality of those signal transmissions, based on their strength (in decibels), and helps identify performance issues.
+
+The system must provide individual satellite performance reports, track global statistics, and flag critical failures if any are found.
+
+This system will be used by mission control operators to make realtime decisions — including sending maintenance commands, triggering alerts, or scheduling fallback protocols.
+
+
+
+ 🎯 Your Objectives:
+
+Develop a program that performs the following for each satellite:
+
+
+ 🧾 Input (For One Satellite):
+
+1. Satellite Name
+2. Orbit Type
+
+    (LEO → Low Earth Orbit, MEO → Medium, GEO → Geostationary)
+3. Number of signal transmissions to process
+4. Signal values for each transmission in decibels (dB)
+
+    Negative numbers (e.g., 45, 60, 90, etc.)
+
+
+ 🧪 What the Program Should Do (Per Satellite):
+
+1. Display the satellite name and orbit type in formatted style.
+
+2. Analyze the signal logs:
+
+    Calculate the average signal strength from all values.
+    Count how many signal logs are below safe threshold (`< 80 dB`).
+
+3. Determine satellite communication health:
+
+    If average ≥ 60 → `Strong Signal ✅`
+    If between 60 and 80 → `Moderate Signal ⚠️`
+    If below 80 → `Weak Signal ❌`
+
+4. Assign a communication status label based on the above rule.
+
+5. Generate a report for this satellite showing:
+
+    Satellite name
+    Orbit type
+    Number of transmissions
+    Average signal strength
+    Count of weak signals (below threshold)
+    Final status label
+
+
+
+ 🔁 Processing Multiple Satellites:
+
+After analyzing one satellite, ask:
+
+
+Would you like to analyze another satellite? (yes/no)
+
+
+If yes, repeat the process.
+
+
+
+ 📊 After All Satellites Have Been Analyzed:
+
+1. Display the total number of satellites processed.
+
+2. Display the total number of signal logs recorded.
+
+3. Display the overall average signal strength (across all satellites).
+
+4. If any satellite had all of its signal logs below `90 dB`, show a message:
+
+
+⚠️ Critical Alert: At least one satellite may be at risk of total signal loss.
+
+
+
+
+ 🧩 Functional & Logical Expectations:
+
+ Make sure each satellite is handled independently.
+ Maintain global totals and averages across multiple satellites.
+ Ensure signal values are numerically processed to compute statistics.
+ Use appropriate decision logic to assign statuses.
+
+
+
+ 🧪 Sample Input (One Satellite):
+
+
+Satellite Name: OrionX2  
+Orbit Type: LEO  
+Number of Logs: 4  
+Signal Log 1: 58  
+Signal Log 2: 65  
+Signal Log 3: 83  
+Signal Log 4: 92
+
+
+
+
+ ✅ Sample Output (for that satellite):
+
+
+🛰️ Analyzing Satellite: ORIONX2
+Orbit Type        : LEO
+Signal Logs       : 4
+Avg Signal        : 74.5 dB
+Below Safe (80)  : 2
+Status            : Moderate Signal ⚠️
+
+
+
+
+ 📈 Final Summary Output (after multiple satellites):
+
+
+Satellites Analyzed  : 3  
+Total Signal Logs    : 12  
+Overall Avg Signal   : 71.8 dB  
+Critical Alert       : One or more satellites are at risk
+
+
