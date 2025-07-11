@@ -16,7 +16,7 @@ Write a Java program that:
 1. Accepts multi-line feedback from the user.
    (Use `"end"` as the keyword to finish input)
 
-2. Splits the feedback into sentences based on punctuation: `.`, `!`, `?`.
+2. Splits the feedback into sentences based on punctuation: `.`.
 
 3. For each sentence:
 
