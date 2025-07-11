@@ -1,0 +1,61 @@
+ Travel Itinerary & Cost Estimator
+
+You are working with a travel agency that offers custom tour packages. Customers provide their travel preferences including a list of places they want to visit, a short note about their expectations, and their travel budget.
+
+Write a program that:
+
+1. Accepts a comma-separated list of destinations from the user. Some destinations may include the phrase “Must Visit” to indicate priority locations.
+
+2. Accepts a one-line sentence describing the traveler’s preferences.
+
+3. Accepts the overall trip budget as a number.
+
+4. Accepts the number of days the user wants to spend at each destination.
+
+
+The program should:
+
+ Display each destination clearly, one per line with numbering.
+
+ Count how many destinations are marked as "Must Visit" and how many are not.
+
+ Identify the type of trip based on the note provided by the user.
+  (Examples: “I want a luxury experience”, “We are on a tight budget”)
+
+ Calculate the total cost of the trip:
+
+   ₹3,500 per day for each “Must Visit” destination
+   ₹2,500 per day for other destinations
+
+ Based on the cost and the budget provided, display whether the trip is approved or not.
+
+
+
+Sample Input:
+
+
+Destinations: Paris - Must Visit, Tokyo, Goa - Must Visit, Dubai, Tokyo
+Note: I want a luxury experience with no compromises.
+Budget: 50000
+Days per destination: 2
+
+
+Sample Output:
+
+
+1. Paris - Must Visit
+2. Tokyo
+3. Goa - Must Visit
+4. Dubai
+5. Tokyo
+
+Total Destinations   : 5
+Must Visit Places    : 2
+Other Destinations   : 3
+Trip Type            : Premium Trip
+Total Cost           : ₹28000
+Budget               : ₹50000
+Status               : Trip Approved 
+
+
+
