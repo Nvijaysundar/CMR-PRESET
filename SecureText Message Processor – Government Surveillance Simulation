@@ -3,9 +3,9 @@
  🔐 SecureText Message Processor – Government Surveillance Simulation
 
 Background:
-You are a software engineer working for a classified government agency named "SecureText Analysis Division (STAD)". Field agents frequently send encrypted operation logs to your backend system. Each message log contains a specific format and requires parsing, classification, formatting, and secure processing — all without using any Collection framework.
-
-
+You are a software engineer working for a classified government agency named "SecureText Analysis Division (STAD)". 
+Field agents frequently send encrypted operation logs to your backend system. 
+Each message log contains a specific format and requires parsing, classification, formatting, and secure processing
 
  🔧 Problem Statement:
 
