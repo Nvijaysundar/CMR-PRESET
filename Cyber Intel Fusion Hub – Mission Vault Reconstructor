@@ -1,0 +1,70 @@
+Scenario: Cyber Intel Fusion Hub – Mission Vault Reconstructor
+
+Background:
+You are the lead backend engineer for the Cyber Intelligence Fusion Hub (CIFH). Highly encrypted mission records are uploaded from remote spy stations and stored in a secure vault. These logs are extremely obfuscated, contain mixed formatting styles, embedded flags, variable-length identifiers, and localized date formats.
+
+Due to a national emergency, you are tasked with rebuilding the vault logs into a human-readable format using only core Java features. You are allowed to use regular expressions (regex), but not collections or arrays.
+
+Input Format:
+The logs come in a single encrypted String. Each entry is wrapped between <ENTRY> and </ENTRY>. Inside each entry, the following fields appear in random order, with inconsistent formatting and delimiters:
+
+ Agent: AGENT:{\[CountryCode-AgentID]}
+ Mission Code: MISSION=CODE-Operation\_Name\_Level
+ Status Flag: <STATUS>\[flag\_value]</STATUS>
+ Local Time: TIME\[DD-MM-YYYY|hh\:mm\:ss] or TIME\[YYYY/MM/DD hh\:mm\:ss]
+ Cipher Key: CIPHER<<[KEY@ZONE](mailto:KEY@ZONE)>>
+
+All entries are concatenated in a block string with line breaks.
+
+Sample Input:
+
+<ENTRY>
+TIME[12-07-2025|23:45:10]
+AGENT:{[IND-1007]}
+<STATUS>[ACTIVE]</STATUS>
+CIPHER<<<DELTA@INDIA>>>
+MISSION=CODE-Midnight_Thunder_High
+</ENTRY>
+<ENTRY>
+<STATUS>[ABORTED]</STATUS>
+TIME[2025/07/10 03:20:30]
+AGENT:{[UK-2002]}
+MISSION=CODE-Shadow_Eagle_Medium
+CIPHER<<<OMEGA@UK>>>
+</ENTRY>
+<ENTRY>
+MISSION=CODE-Wolf_Pack_Low
+AGENT:{[US-3033]}
+TIME[2025/07/09 04:10:00]
+<STATUS>[SUSPENDED]</STATUS>
+CIPHER<<<ALPHA@USA>>>
+</ENTRY>
+
+
+Your Task:
+Build a Java application to parse and process the above logs using the following rules.
+
+extract all blocks between <ENTRY> and </ENTRY>.
+
+
+ Reverse the AgentID (e.g., IND-1007 becomes 7001-DNI), then append #ZONE
+ Status mapping:
+  ACTIVE becomes ON MISSION
+  SUSPENDED becomes STANDBY
+  ABORTED becomes TERMINATED
+ Risk mapping:
+  High becomes CRITICAL
+  Medium becomes MODERATE
+  Low becomes MINIMAL
+ Time formatting:
+  Convert both date formats (DD-MM-YYYY|HH:mm:ss and YYYY/MM/DD HH:mm:ss) to "dd MMM yyyy, hh:mmAM/PM"
+
+Each line of output must be formatted using StringJoiner in this format:
+
+EncryptedAgentID | Mission Title | Risk | Status | Time | CipherKey
+
+Sample Output:
+
+7001-DNI#INDIA | Midnight Thunder |  CRITICAL | ON MISSION | 12 Jul 2025, 11:45PM | DELTA
+2002-KU#UK | Shadow Eagle |  MODERATE | TERMINATED | 10 Jul 2025, 03:20AM | OMEGA
+3303-SU#USA | Wolf Pack |  MINIMAL | STANDBY | 09 Jul 2025, 04:10AM | ALPHA
