@@ -8,7 +8,7 @@ Your task is to develop a Java module that processes a block of agent messages. 
 Your system will:
 Input Specifications:
 The messages come as a multiline string block, hardcoded into the code.
-Each line contains 3 sections separated by a " - " symbol:  
+Each line contains 3 sections separated by a "-" symbol:  
 [AgentCode]  Operation Operation_Name  YYYY/MM/DD hh:mmAM/PM
  Example:
 [Agent007]  Operation Midnight_Fox  2025/07/12 09:30AM 
@@ -37,7 +37,7 @@ Processing Requirements:
     Format the final output using `StringJoiner` as:
      EncryptedAgentID | Operation Name | Priority | TimeSlot
 
-[Agent007]  Operation Midnight_Fox  2025/07/12 09:30AM - [Agent231]  Operation Silent_Eagle  2025/07/12 02:45PM - [Agent999]  Operation Snow_Wolf  2025/07/12 10:10AM
+[Agent007] Operation Midnight_Fox 2025/07/12 09:30AM-[Agent231] Operation Silent_Eagle 2025/07/12 02:45PM-[Agent999] Operation Snow_Wolf 2025/07/12 10:10AM
 
 Expected Final Output:
 
