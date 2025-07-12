@@ -9,14 +9,15 @@ Each message log contains a specific format and requires parsing, classification
 
  🔧 Problem Statement:
 
-Your task is to develop a Java module that processes a block of agent messages. These messages follow a fixed pattern but must be cleaned, analyzed, transformed, and printed in a readable summary format. Your system will:
+Your task is to develop a Java module that processes a block of agent messages. These messages follow a fixed pattern but must be cleaned, analyzed, transformed, and printed in a readable summary format. 
+Your system will:
 
 
 
  📌 Input Specifications:
 
  The messages come as a multiline string block, hardcoded into the code.
- Each line contains 3 sections separated by a "``" symbol:
+ Each line contains 3 sections separated by a " - " symbol:
 
   
   [AgentCode]  Operation Operation_Name  YYYY/MM/DD hh:mmAM/PM
@@ -70,10 +71,7 @@ Your task is to develop a Java module that processes a block of agent messages. 
 
 
 
-[Agent007]  Operation Midnight_Fox  2025/07/12 09:30AM
-[Agent231]  Operation Silent_Eagle  2025/07/12 02:45PM
-[Agent999]  Operation Snow_Wolf  2025/07/12 10:10AM
-end
+[Agent007]  Operation Midnight_Fox  2025/07/12 09:30AM - [Agent231]  Operation Silent_Eagle  2025/07/12 02:45PM - [Agent999]  Operation Snow_Wolf  2025/07/12 10:10AM
 
 
 
